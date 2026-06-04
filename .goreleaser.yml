@@ -1,0 +1,78 @@
+project_name: mend
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: mend
+    main: .
+    binary: mend
+    ldflags:
+      - -s -w
+      - -X github.com/will/mend/internal/version.Version={{.Version}}
+      - -X github.com/will/mend/internal/version.Commit={{.ShortCommit}}
+      - -X github.com/will/mend/internal/version.Date={{.Date}}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: windows
+        goarch: arm64
+
+archives:
+  - id: default
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - LICENSE
+      - README.md
+      - examples/**/*
+
+checksum:
+  name_template: "checksums.txt"
+  algorithm: sha256
+
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^ci:"
+
+brews:
+  - name: mend
+    repository:
+      owner: will
+      name: homebrew-tap
+      branch: main
+    homepage: https://github.com/will/mend
+    description: "Markdown to HTML, one static binary, zero dependencies."
+    license: MIT
+    directory: Formula
+    install: |
+      bin.install "mend"
+    test: |
+      system "#{bin}/mend", "--version"
+
+scoops:
+  - name: mend
+    repository:
+      owner: will
+      name: scoop-bucket
+      branch: main
+    homepage: https://github.com/will/mend
+    description: "Markdown to HTML, one static binary, zero dependencies."
+    license: MIT

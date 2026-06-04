@@ -1,0 +1,24 @@
+class Mend < Formula
+  desc "Markdown to HTML, one static binary, zero dependencies."
+  homepage "https://github.com/will/mend"
+  url "https://github.com/will/mend/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "REPLACE_WITH_SHA256_OF_RELEASE_TARBALL"
+  license "MIT"
+  head "https://github.com/will/mend.git", branch: "main"
+
+  depends_on "go" => :build
+
+  def install
+    ldflags = %W[
+      -s -w
+      -X github.com/will/mend/internal/version.Version=#{version}
+      -X github.com/will/mend/internal/version.Commit=#{tap.user}
+      -X github.com/will/mend/internal/version.Date=#{time.iso8601}
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags)
+  end
+
+  test do
+    assert_match "mend", shell_output("#{bin}/mend --version")
+  end
+end

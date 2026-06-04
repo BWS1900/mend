@@ -1,0 +1,36 @@
+name: bug
+description: Report a bug in mend
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: mend version
+      description: Output of `mend --version`
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS & arch
+      placeholder: "Debian 13, linux/amd64"
