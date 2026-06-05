@@ -6,7 +6,7 @@ All notable changes to mend are documented here. The format follows
 
 ## [Unreleased]
 
-## [0.1.0] - 2026-XX-XX
+## [0.1.0] - 2026-06-05
 
 ### Added
 - Initial release.
