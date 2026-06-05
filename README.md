@@ -39,13 +39,13 @@ highlighting — no JavaScript, no web fonts, no external requests.
 
 ## Install
 
-### Homebrew
+### Homebrew (Not yet supported)
 
 ```sh
 brew install BWS1900/tap/mend
 ```
 
-### Scoop
+### Scoop (Not yet supported)
 
 ```pwsh
 scoop bucket add BWS1900 https://github.com/BWS1900/scoop-bucket
