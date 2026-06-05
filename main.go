@@ -9,11 +9,11 @@ import (
 	"path/filepath"
 	"syscall"
 
-	"github.com/will/mend/internal/render"
-	"github.com/will/mend/internal/serve"
-	"github.com/will/mend/internal/theme"
-	"github.com/will/mend/internal/version"
-	"github.com/will/mend/internal/watch"
+	"github.com/BWS1900/mend/internal/render"
+	"github.com/BWS1900/mend/internal/serve"
+	"github.com/BWS1900/mend/internal/theme"
+	"github.com/BWS1900/mend/internal/version"
+	"github.com/BWS1900/mend/internal/watch"
 )
 
 type config struct {

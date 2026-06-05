@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # mend installer
-# Usage: curl -sSfL https://raw.githubusercontent.com/will/mend/main/scripts/install.sh | sh
+# Usage: curl -sSfL https://raw.githubusercontent.com/BWS1900/mend/main/scripts/install.sh | sh
 #
 # Environment variables:
 #   MEND_VERSION   - version to install (default: latest)
@@ -16,14 +16,14 @@ require() {
 if [[ -n "${MEND_GO_INSTALL:-}" ]]; then
   require go
   echo "Installing mend with go install..."
-  go install "github.com/will/mend@${MEND_VERSION:-latest}"
+  go install "github.com/BWS1900/mend@${MEND_VERSION:-latest}"
   exit 0
 fi
 
 require curl
 require tar
 
-repo="will/mend"
+repo="BWS1900/mend"
 version="${MEND_VERSION:-latest}"
 
 case "$(uname -s)" in

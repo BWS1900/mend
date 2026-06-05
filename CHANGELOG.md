@@ -19,5 +19,5 @@ All notable changes to mend are documented here. The format follows
 - Single static binary, cross-compiled for linux/darwin/windows on amd64/arm64.
 - Homebrew, Scoop, `go install`, and curl-based install.
 
-[Unreleased]: https://github.com/will/mend/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/will/mend/releases/tag/v0.1.0
+[Unreleased]: https://github.com/BWS1900/mend/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/BWS1900/mend/releases/tag/v0.1.0

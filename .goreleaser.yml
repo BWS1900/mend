@@ -10,9 +10,9 @@ builds:
     binary: mend
     ldflags:
       - -s -w
-      - -X github.com/will/mend/internal/version.Version={{.Version}}
-      - -X github.com/will/mend/internal/version.Commit={{.ShortCommit}}
-      - -X github.com/will/mend/internal/version.Date={{.Date}}
+      - -X github.com/BWS1900/mend/internal/version.Version={{.Version}}
+      - -X github.com/BWS1900/mend/internal/version.Commit={{.ShortCommit}}
+      - -X github.com/BWS1900/mend/internal/version.Date={{.Date}}
     env:
       - CGO_ENABLED=0
     goos:
@@ -52,27 +52,27 @@ changelog:
       - "^test:"
       - "^ci:"
 
-brews:
-  - name: mend
-    repository:
-      owner: will
-      name: homebrew-tap
-      branch: main
-    homepage: https://github.com/will/mend
-    description: "Markdown to HTML, one static binary, zero dependencies."
-    license: MIT
-    directory: Formula
-    install: |
-      bin.install "mend"
-    test: |
-      system "#{bin}/mend", "--version"
+# brews:
+#   - name: mend
+#     repository:
+#       owner: BWS1900
+#       name: homebrew-tap
+#       branch: main
+#     homepage: https://github.com/BWS1900/mend
+#     description: "Markdown to HTML, one static binary, zero dependencies."
+#     license: MIT
+#     directory: Formula
+#     install: |
+#       bin.install "mend"
+#     test: |
+#       system "#{bin}/mend", "--version"
 
-scoops:
-  - name: mend
-    repository:
-      owner: will
-      name: scoop-bucket
-      branch: main
-    homepage: https://github.com/will/mend
-    description: "Markdown to HTML, one static binary, zero dependencies."
-    license: MIT
+# scoops:
+#   - name: mend
+#     repository:
+#       owner: BWS1900
+#       name: scoop-bucket
+#       branch: main
+#     homepage: https://github.com/BWS1900/mend
+#     description: "Markdown to HTML, one static binary, zero dependencies."
+#     license: MIT

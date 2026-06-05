@@ -4,9 +4,9 @@
 
 **Markdown → HTML, one static binary, zero dependencies.**
 
-[![CI](https://github.com/will/mend/actions/workflows/ci.yml/badge.svg)](https://github.com/will/mend/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/will/mend)](https://github.com/will/mend/releases)
-[![Go Report Card](https://goreportcard.com/badge/github.com/will/mend)](https://goreportcard.com/report/github.com/will/mend)
+[![CI](https://github.com/BWS1900/mend/actions/workflows/ci.yml/badge.svg)](https://github.com/BWS1900/mend/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/BWS1900/mend)](https://github.com/BWS1900/mend/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/BWS1900/mend)](https://goreportcard.com/report/github.com/BWS1900/mend)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Go](https://img.shields.io/badge/go-1.24+-00ADD8)](https://go.dev)
 
@@ -32,44 +32,40 @@ highlighting — no JavaScript, no web fonts, no external requests.
 ## Demo
 
 <p align="center">
-  <img src="docs/demo.gif" alt="mend demo" width="720">
+  <img src="docs/screenshot.png" alt="mend rendered output" width="720">
 </p>
 
-Don't have a demo GIF yet? Generate one with [vhs](https://github.com/charmbracelet/vhs):
-
-```sh
-vhs docs/demo.tape
-```
+*Screenshot of `mend -theme github README.md` rendered in the browser.*
 
 ## Install
 
 ### Homebrew
 
 ```sh
-brew install will/tap/mend
+brew install BWS1900/tap/mend
 ```
 
 ### Scoop
 
 ```pwsh
-scoop bucket add will https://github.com/will/scoop-bucket
+scoop bucket add BWS1900 https://github.com/BWS1900/scoop-bucket
 scoop install mend
 ```
 
 ### `go install`
 
 ```sh
-go install github.com/will/mend@latest
+go install github.com/BWS1900/mend@latest
 ```
 
 ### Binary download
 
-Grab a release for your platform from [the releases page](https://github.com/will/mend/releases/latest).
+Grab a release for your platform from [the releases page](https://github.com/BWS1900/mend/releases/latest).
 
 ### Build from source
 
 ```sh
-git clone https://github.com/will/mend
+git clone https://github.com/BWS1900/mend
 cd mend
 go build -o mend .
 sudo mv mend /usr/local/bin/    # optional
@@ -112,7 +108,7 @@ reloads on save.
 ## Library use
 
 ```go
-import "github.com/will/mend/internal/render"
+import "github.com/BWS1900/mend/internal/render"
 
 html, err := render.Markdown([]byte("# hi"), render.Options{
     Highlight: true,

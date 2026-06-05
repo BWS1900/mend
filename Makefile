@@ -2,9 +2,9 @@ SHELL := /bin/bash
 BIN   := mend
 PKG   := ./...
 LDFLAGS := -s -w \
-  -X github.com/will/mend/internal/version.Version=$(shell git describe --tags --always --dirty 2>/dev/null || echo dev) \
-  -X github.com/will/mend/internal/version.Commit=$(shell git rev-parse --short HEAD 2>/dev/null || echo none) \
-  -X github.com/will/mend/internal/version.Date=$(shell date -u +%Y-%m-%dT%H:%M:%SZ)
+  -X github.com/BWS1900/mend/internal/version.Version=$(shell git describe --tags --always --dirty 2>/dev/null || echo dev) \
+  -X github.com/BWS1900/mend/internal/version.Commit=$(shell git rev-parse --short HEAD 2>/dev/null || echo none) \
+  -X github.com/BWS1900/mend/internal/version.Date=$(shell date -u +%Y-%m-%dT%H:%M:%SZ)
 
 .PHONY: all build test test-race cover fmt vet lint clean run snapshot release install
 
